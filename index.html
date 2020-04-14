@@ -1,0 +1,31 @@
+<!DOCTYPE html public>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<title>Exemplo Notificações</title>
+	<script>
+	function notifyMe(){
+		if (!("Notification" in window)){
+			alert("Não é possível efetuar Notificações");
+		} else 	if (Notification.permission === "granted"){
+			var notification = new Notification("Bem vindo!");
+		} else 	if (Notification.permission === "denied"){
+			Notification.requestPermission (function (request) {
+				if (permission === "granted"){
+					var notification = new Notification("Bem vindo!");
+				}
+			});
+		}
+	}
+	
+	Notification.requestPermission();
+	</script>
+</head>
+
+<body>
+	Teste de Permição
+</body>
+</html>
